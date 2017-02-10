@@ -13,7 +13,6 @@
   <script>
     /* global $ */
     var main = function() {
-    //$(document).ready(function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
     };
   </script>
@@ -49,9 +48,11 @@
 
 
   <!-- HTML content ends here. -->
-    <script>
-$(document).ready(main);
-    </script>
+  <script>
+    /* global $*/
+    /* global main */
+    $(document).ready(main);
+  </script>
 </body>
 
 </html>
