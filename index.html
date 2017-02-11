@@ -20,9 +20,10 @@
     }
     var newButtonValue = function() {
       var buttonValue = Math.floor(Math.random() * 100);
+      buttonValue = correctAnswer;
       $("#a1").text(buttonValue);
       $("#a1").on("click", function() {
-        grade("#a1", buttonValue, 25);
+        grade("#a1", buttonValue, correctAnswer);
       });
     }
     var additionProblem = function() {
@@ -31,10 +32,10 @@
       // 2) Generate random number y
       var y = Math.floor(Math.random() * 100);
       // 3) Create questionString using x and y
-      var questionString = "What is the sum of "+ x + " and " + y + " ?";
+      var questionString = "What is the sum of " + x + " and " + y + " ?";
       // 4) Set the text of the additionProblem id to questionString
       $("#additionProblem").text(questionString);
-      
+      correctAnswer = x + y;
     };
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
