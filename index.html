@@ -18,12 +18,17 @@
       }
       $(idString).text(feedback);
     }
-    var newButtonValue = function(correctAnswer) {
-      var buttonValue = Math.floor(Math.random() * 100);
-      buttonValue = correctAnswer;
-      $("#a1").text(buttonValue);
-      $("#a1").on("click", function() {
-        grade("#a1", buttonValue, correctAnswer);
+    var newButtonValues = function(correctAnswer) {
+      var buttonValue1 = Math.floor(Math.random() * 100);
+      var buttonValue2 = Math.floor(Math.random() * 100);
+      newButtonValue("#a1", correctAnswer, buttonValue1);
+      newButtonValue("#a2", correctAnswer, buttonValue2);
+      newButtonValue("#a3", correctAnswer, correctAnswer);
+    };
+    var newButtonValue = function(idStr, correctAnswer, buttonValue) {
+      $(idStr).text(buttonValue);
+      $(idStr).on("click", function() {
+        grade(idStr, buttonValue, correctAnswer);
       });
     }
     var additionProblem = function() {
@@ -36,7 +41,7 @@
       // 4) Set the text of the additionProblem id to questionString
       $("#additionProblem").text(questionString);
       var correctAnswer = x + y;
-      newButtonValue(correctAnswer);
+      newButtonValues(correctAnswer);
     };
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
