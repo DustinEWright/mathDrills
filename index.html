@@ -17,7 +17,7 @@
         feedback = "Correct!!!!!";
       }
       $(idString).text(feedback);
-    }
+    };
     var newButtonValues = function(correctAnswer) {
       var buttonValue1 = Math.floor(Math.random() * 100);
       var buttonValue2 = Math.floor(Math.random() * 100);
@@ -46,19 +46,7 @@
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
       additionProblem();
-      /*
-      $("#a1").on("click", function() {
-        grade("#a1", 55, 25);
-      });
-      */
-      $("#a2").on("click", function() {
-        grade("#a2", 25, 25);
-      });
-
-      $("#a3").on("click", function() {
-        grade("#a3", 9, 25);
-      });
-
+     
     };
   </script>
   <!-- HTML content i.e. Bootstrap begins here. -->
