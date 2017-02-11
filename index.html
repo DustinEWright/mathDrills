@@ -18,16 +18,28 @@
       }
       $(idString).text(feedback);
     }
-    var newAdditionProblem = function() {
+    var newButtonValue = function() {
       var buttonValue = Math.floor(Math.random() * 100);
       $("#a1").text(buttonValue);
       $("#a1").on("click", function() {
         grade("#a1", buttonValue, 25);
       });
     }
+    var additionProblem = function() {
+      // 1) Generate random number x
+      var x = Math.floor(Math.random() * 100);
+      // 2) Generate random number y
+      var y = Math.floor(Math.random() * 100);
+      // 3) Create questionString using x and y
+      var questionString = "What is the sum of "+ x + " and " + y + " ?";
+      // 4) Set the text of the additionProblem id to questionString
+      $("#additionProblem").text(questionString);
+      
+    };
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
-      newAdditionProblem();
+      additionProblem();
+      newButtonValue();
       /*
       $("#a1").on("click", function() {
         grade("#a1", 55, 25);
@@ -59,7 +71,7 @@
 
     <div class="tab-content clearfix">
       <div class="tab-pane active" id="1b">
-        <h3>What is the sum of 10 and 15 ?</h3>
+        <h3 id="additionProblem">What is the sum of 10 and 15 ?</h3>
         <h5 id="additionAnswer">Click your answer below.</h5>
         <div class="btn-block">
           <button type="button" class="btn btn-primary" id="a1">55?</button>
