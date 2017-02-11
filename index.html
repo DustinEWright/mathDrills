@@ -18,12 +18,21 @@
       }
       $(idString).text(feedback);
     }
+    var newAdditionProblem = function() {
+      var buttonValue = Math.floor(Math.random() * 100);
+      $("#a1").text(buttonValue);
+      $("#a1").on("click", function() {
+        grade("#a1", buttonValue, 25);
+      });
+    }
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
+      newAdditionProblem();
+      /*
       $("#a1").on("click", function() {
         grade("#a1", 55, 25);
       });
-
+      */
       $("#a2").on("click", function() {
         grade("#a2", 25, 25);
       });
