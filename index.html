@@ -11,11 +11,16 @@
 <body>
   <script>
     /* global $ */
+    var grade = function(idString, buttonValue, correctAnswer) {
+      var feedback = "Try again.....";
+      if (buttonValue == correctAnswer) {
+        feedback = "Correct!!!!!";
+      }
+      $(idString).text(feedback);
+    }
     var main = function() {
         console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
-        $("#a1").on("click", function() {
-            $("#a1").text("Try Again.");
-        });
+        $("#a1").on("click", function() { grade("#a1",55,25); } );
         $("#a2").on("click", function() {
             $("#a2").text("Correct!");
         });
