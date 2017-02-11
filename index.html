@@ -19,14 +19,19 @@
       $(idString).text(feedback);
     }
     var main = function() {
-        console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
-        $("#a1").on("click", function() { grade("#a1",55,25); } );
-        $("#a2").on("click", function() {
-            $("#a2").text("Correct!");
-        });
-        $("#a3").on("click", function() {
-            $("#a3").text("Try Again.");
-        });
+      console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
+      $("#a1").on("click", function() {
+        grade("#a1", 55, 25);
+      });
+
+      $("#a2").on("click", function() {
+        grade("#a2", 25, 25);
+      });
+
+      $("#a3").on("click", function() {
+        grade("#a3", 9, 25);
+      });
+
     };
   </script>
   <!-- HTML content i.e. Bootstrap begins here. -->
