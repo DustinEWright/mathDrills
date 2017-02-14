@@ -21,6 +21,7 @@
     var newButtonValues = function(correctAnswer) {
       var buttonValue1 = Math.floor(Math.random() * 100);
       var buttonValue2 = Math.floor(Math.random() * 100);
+      // Addition Button Values
       newButtonValue("#a1", correctAnswer, buttonValue1);
       newButtonValue("#a2", correctAnswer, buttonValue2);
       newButtonValue("#a3", correctAnswer, correctAnswer);
@@ -31,6 +32,7 @@
         grade(idStr, buttonValue, correctAnswer);
       });
     };
+    // Addition Tab
     var additionProblem = function() {
       // 1) Generate random number x
       var x = Math.floor(Math.random() * 100);
@@ -43,10 +45,24 @@
       var correctAnswer = x + y;
       newButtonValues(correctAnswer);
     };
+    // Subtraction Tab
+    var subtractionProblem = function() {
+      // 1) Generate random number x
+      var x = Math.floor(Math.random() * 100);
+      // 2) Generate random number y
+      var y = Math.floor(Math.random() * 100);
+      // 3) Create questionString using x and y
+      var questionString = "What is the result of " + x + " less " + y + " ?";
+      // 4) Set the text of the subtractionProblem id to questionString
+      $("#subtractionProblem").text(questionString);
+      var correctAnswer = x - y;
+      newButtonValues(correctAnswer);
+    };
+    
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
-      additionProblem();
-     
+     additionProblem();
+     subtractionProblem();
     };
   </script>
   <!-- HTML content i.e. Bootstrap begins here. -->
