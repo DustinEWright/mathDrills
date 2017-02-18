@@ -18,13 +18,16 @@
       }
       $(idString).text(feedback);
     };
-    var newButtonValues = function(correctAnswer) {
+    var newButtonValues = function(buttonCategory, correctAnswer) {
       var buttonValue1 = Math.floor(Math.random() * 100);
       var buttonValue2 = Math.floor(Math.random() * 100);
       // Addition Button Values
-      newButtonValue("#a1", correctAnswer, buttonValue1);
-      newButtonValue("#a2", correctAnswer, buttonValue2);
-      newButtonValue("#a3", correctAnswer, correctAnswer);
+      var b1Selector = "#" + buttonCategory + "1";
+      newButtonValue(b1Selector, correctAnswer, buttonValue1);
+      var b2Selector = "#" + buttonCategory + "2";
+      newButtonValue(b2Selector, correctAnswer, buttonValue2);
+      var b3Selector = "#" + buttonCategory + "3";
+      newButtonValue(b3Selector, correctAnswer, correctAnswer);
     };
     var newButtonValue = function(idStr, correctAnswer, buttonValue) {
       $(idStr).text(buttonValue);
@@ -43,7 +46,7 @@
       // 4) Set the text of the additionProblem id to questionString
       $("#additionProblem").text(questionString);
       var correctAnswer = x + y;
-      newButtonValues(correctAnswer);
+      newButtonValues("a",correctAnswer);
     };
     /*
     //Subtraction Tab
@@ -60,11 +63,11 @@
       newButtonValues(correctAnswer);
     };
     */
-    
+
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
-     additionProblem();
-     //subtractionProblem();
+      additionProblem();
+      //subtractionProblem();
     };
   </script>
   <!-- HTML content i.e. Bootstrap begins here. -->
@@ -99,7 +102,7 @@
           <button type="button" class="btn btn-primary" id="s2">12?</button>
           <button type="button" class="btn btn-primary" id="s3">5?</button>
         </div>
-        
+
       </div>
       <div class="tab-pane" id="3b">
         <h3>Multiplication problem here.</h3>
