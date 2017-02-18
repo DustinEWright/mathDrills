@@ -48,7 +48,7 @@
       var correctAnswer = x + y;
       newButtonValues("a",correctAnswer);
     };
-    /*
+
     //Subtraction Tab
     var subtractionProblem = function() {
       // 1) Generate random number x
@@ -60,14 +60,14 @@
       // 4) Set the text of the subtractionProblem id to questionString
       $("#subtractionProblem").text(questionString);
       var correctAnswer = x - y;
-      newButtonValues(correctAnswer);
+      newButtonValues("s",correctAnswer);
     };
-    */
+
 
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
       additionProblem();
-      //subtractionProblem();
+      subtractionProblem();
     };
   </script>
   <!-- HTML content i.e. Bootstrap begins here. -->
