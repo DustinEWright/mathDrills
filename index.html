@@ -62,12 +62,27 @@
       var correctAnswer = x - y;
       newButtonValues("s",correctAnswer);
     };
+    
+    //Multiplication Tab
+    var multiplicationProblem = function() {
+      // 1) Generate random number x
+      var x = Math.floor(Math.random() * 100);
+      // 2) Generate random number y
+      var y = Math.floor(Math.random() * 100);
+      // 3) Create questionString using x and y
+      var questionString = "What is the product of " + x + " multiplied " + y + " ?";
+      // 4) Set the text of the multiplicationProblem id to questionString
+      $("#multiplicationProblem").text(questionString);
+      var correctAnswer = x * y;
+      newButtonValues("m",correctAnswer);
+    };
 
 
     var main = function() {
       console.log("The document is ready.  Ready, for your scripting.  JavaScripting :-)");
       additionProblem();
       subtractionProblem();
+      multiplicationProblem();
     };
   </script>
   <!-- HTML content i.e. Bootstrap begins here. -->
@@ -105,7 +120,13 @@
 
       </div>
       <div class="tab-pane" id="3b">
-        <h3>Multiplication problem here.</h3>
+        <h3 id="multiplicationProblem">What is the sum of 10 and 15 ?</h3>
+        <h5 id="multiplicationAnswer">Click your answer below.</h5>
+        <div class="btn-block">
+          <button type="button" class="btn btn-primary" id="m1">101?</button>
+          <button type="button" class="btn btn-primary" id="m2">12?</button>
+          <button type="button" class="btn btn-primary" id="m3">5?</button>
+        </div>
       </div>
       <div class="tab-pane" id="4b">
         <h3>Division problem here.</h3>
